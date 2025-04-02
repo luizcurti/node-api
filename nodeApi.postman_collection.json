@@ -1,0 +1,43 @@
+{
+    "info": {
+      "_postman_id": "your-unique-id",
+      "name": "Node API Collection",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Get All Items",
+        "request": {
+          "method": "GET",
+          "url": "{{base_url}}/items"
+        }
+      },
+      {
+        "name": "Create Item",
+        "request": {
+          "method": "POST",
+          "header": [{ "key": "Content-Type", "value": "application/json" }],
+          "url": "{{base_url}}/items",
+          "body": { "mode": "raw", "raw": "{\n  \"name\": \"Sample Item\"\n}" }
+        }
+      },
+      {
+        "name": "Update Item",
+        "request": {
+          "method": "PUT",
+          "header": [{ "key": "Content-Type", "value": "application/json" }],
+          "url": "{{base_url}}/items/:id",
+          "body": { "mode": "raw", "raw": "{\n  \"name\": \"Updated Item\"\n}" }
+        }
+      },
+      {
+        "name": "Delete Item",
+        "request": {
+          "method": "DELETE",
+          "url": "{{base_url}}/items/:id"
+        }
+      }
+    ],
+    "variable": [{ "key": "base_url", "value": "http://localhost:3000", "type": "string" }]
+  }
+  
