@@ -22,8 +22,8 @@ Basic database connection setup
 4. Start the server:
 * node server.js
 
-API Endpoints
-GET /items - Fetch all items
-POST /items - Create a new item
-PUT /items/:id - Update an item
-DELETE /items/:id - Delete an item
+## API Endpoints
+* GET /items - Fetch all items
+* POST /items - Create a new item
+* PUT /items/:id - Update an item
+* DELETE /items/:id - Delete an item

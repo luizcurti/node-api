@@ -1,43 +1,66 @@
 {
-    "info": {
-      "_postman_id": "your-unique-id",
-      "name": "Node API Collection",
-      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  "info": {
+    "_postman_id": "your-unique-id",
+    "name": "Node API - Products",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Products",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/api/products"
+      }
     },
-    "item": [
-      {
-        "name": "Get All Items",
-        "request": {
-          "method": "GET",
-          "url": "{{base_url}}/items"
-        }
-      },
-      {
-        "name": "Create Item",
-        "request": {
-          "method": "POST",
-          "header": [{ "key": "Content-Type", "value": "application/json" }],
-          "url": "{{base_url}}/items",
-          "body": { "mode": "raw", "raw": "{\n  \"name\": \"Sample Item\"\n}" }
-        }
-      },
-      {
-        "name": "Update Item",
-        "request": {
-          "method": "PUT",
-          "header": [{ "key": "Content-Type", "value": "application/json" }],
-          "url": "{{base_url}}/items/:id",
-          "body": { "mode": "raw", "raw": "{\n  \"name\": \"Updated Item\"\n}" }
-        }
-      },
-      {
-        "name": "Delete Item",
-        "request": {
-          "method": "DELETE",
-          "url": "{{base_url}}/items/:id"
+    {
+      "name": "Get Product by ID",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/api/products/{{product_id}}"
+      }
+    },
+    {
+      "name": "Create Product",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base_url}}/api/products",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Product Example\",\n  \"description\": \"A sample description\",\n  \"price\": 99.99\n}"
         }
       }
-    ],
-    "variable": [{ "key": "base_url", "value": "http://localhost:3000", "type": "string" }]
-  }
-  
+    },
+    {
+      "name": "Update Product",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base_url}}/api/products/{{product_id}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Updated Product\",\n  \"description\": \"Updated description\",\n  \"price\": 199.99\n}"
+        }
+      }
+    },
+    {
+      "name": "Delete Product",
+      "request": {
+        "method": "DELETE",
+        "url": "{{base_url}}/api/products/{{product_id}}"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000",
+      "type": "string"
+    },
+    {
+      "key": "product_id",
+      "value": "replace_with_product_id",
+      "type": "string"
+    }
+  ]
+}
