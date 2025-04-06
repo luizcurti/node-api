@@ -23,7 +23,9 @@ Basic database connection setup
 * node server.js
 
 ## API Endpoints
-* GET /items - Fetch all items
-* POST /items - Create a new item
-* PUT /items/:id - Update an item
-* DELETE /items/:id - Delete an item
+GET /products - Fetch all products.
+GET /products/:id - Fetch a single product by its ID.
+POST /products - Create a new product.
+PUT /products/:id - Update an existing product by its ID.
+DELETE /products/:id - Delete a product by its ID.
+
